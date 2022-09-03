@@ -1,13 +1,5 @@
 """Functions for compiling dishes and ingredients for a catering company."""
 
-from sets_categories_data import (VEGAN,
-                                  VEGETARIAN,
-                                  KETO,
-                                  PALEO,
-                                  OMNIVORE,
-                                  ALCOHOLS,
-                                  SPECIAL_INGREDIENTS)
-
 def clean_ingredients(dish_name, dish_ingredients):
     """Remove duplicates from `dish_ingredients`.
 
@@ -34,7 +26,7 @@ def check_drinks(drink_name, drink_ingredients):
 
     """
 
-    if any(True for i in drink_ingredients if i in ALCOHOLS):
+    if any(True for i in drink_ingredients if i in ""):
         return drink_name + " Cocktail"
     return drink_name + " Mocktail"
 
@@ -54,7 +46,7 @@ def categorize_dish(dish_name, dish_ingredients):
     """
 
     keys = 'VEGAN', 'VEGETARIAN', 'PALEO', 'KETO', 'OMNIVORE'
-    values = VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE
+    values = "VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE"
 
     for key, value in zip(keys, values):
         if set(dish_ingredients).issubset(value):
@@ -73,7 +65,7 @@ def tag_special_ingredients(dish):
     SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
     """
 
-    return dish[0], SPECIAL_INGREDIENTS.intersection(dish[1])
+    return
 
 
 def compile_ingredients(dishes):
