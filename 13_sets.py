@@ -65,7 +65,7 @@ def tag_special_ingredients(dish):
     SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
     """
 
-    return
+    return dish
 
 
 def compile_ingredients(dishes):
